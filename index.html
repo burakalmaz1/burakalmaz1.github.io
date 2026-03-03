@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Burak | CV</title>
+  <meta name="description" content="Burak - CV / Portfolio" />
+  <style>
+    :root{
+      --bg: #0b0f19;
+      --card:#11182a;
+      --text:#e9eefc;
+      --muted:#a7b2d6;
+      --brand:#5eead4;
+      --brand2:#60a5fa;
+      --border: rgba(255,255,255,.08);
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 20% 10%, rgba(96,165,250,.22), transparent 60%),
+                  radial-gradient(900px 500px at 80% 10%, rgba(94,234,212,.18), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container{ width:min(1100px, 92vw); margin-inline:auto; }
+
+    /* Header */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,25,.65);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      padding: 12px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:700;
+      letter-spacing:.2px;
+    }
+    .logo{
+      width:36px; height:36px; border-radius:12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 10px 30px rgba(94,234,212,.15);
+    }
+    nav ul{
+      list-style:none; display:flex; gap: 16px; padding:0; margin:0; flex-wrap:wrap;
+    }
+    nav a{
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      transition: .2s;
+    }
+    nav a:hover{ color: var(--text); background: rgba(255,255,255,.06); }
+
+    /* Hero */
+    .hero{
+      padding: 56px 0 22px;
+      display:grid;
+      grid-template-columns: 1.4fr .9fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .card{
+      background: rgba(17,24,42,.82);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero .left{ padding: 26px; }
+    .hero h1{
+      margin:0 0 6px;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height:1.15;
+      letter-spacing:-.6px;
+    }
+    .subtitle{ color: var(--muted); margin: 0 0 18px; }
+    .chips{ display:flex; flex-wrap:wrap; gap:10px; margin: 14px 0 22px; }
+    .chip{
+      font-size: 13px;
+      color: var(--text);
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+    }
+    .cta{ display:flex; flex-wrap:wrap; gap: 10px; margin-top: 16px; }
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      transition: .2s;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.07); }
+    .btn.primary{
+      border: none;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      color: #031018;
+    }
+
+    .hero .right{ padding: 18px; display:grid; gap: 12px; }
+    .mini{
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .mini .label{ color: var(--muted); font-size: 12px; margin-bottom: 4px; }
+    .mini .value{ font-weight: 700; }
+
+    /* Sections */
+    section{ padding: 20px 0; }
+    .section-title{
+      display:flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 18px 0 12px;
+    }
+    .section-title h2{ margin:0; font-size: 18px; }
+    .section-title p{ margin:0; color: var(--muted); font-size: 13px; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .col-6{ grid-column: span 6; }
+    .col-12{ grid-column: span 12; }
+
+    .box{ padding: 18px; border-radius: var(--radius); }
+    .box h3{ margin:0 0 6px; font-size: 16px; }
+    .muted{ color: var(--muted); }
+    .list{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
+    .list li{ margin: 6px 0; }
+
+    .timeline{
+      display:grid;
+      gap: 12px;
+    }
+    .item{
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .item .top{
+      display:flex; flex-wrap:wrap; justify-content: space-between; gap: 8px;
+    }
+    .item .role{ font-weight: 800; }
+    .item .meta{ color: var(--muted); font-size: 13px; }
+    .item p{ margin: 10px 0 0; color: var(--muted); }
+
+    /* Footer */
+    footer{
+      padding: 26px 0 40px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Responsive */
+    @media (max-width: 860px){
+      .hero{ grid-template-columns: 1fr; }
+      .col-6{ grid-column: span 12; }
+      nav ul{ gap: 6px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Ana sayfa">
+        <div class="logo" aria-hidden="true"></div>
+        <span>Burak • CV</span>
+      </a>
+
+      <nav aria-label="Sayfa menüsü">
+        <ul>
+          <li><a href="#about">Hakkımda</a></li>
+          <li><a href="#skills">Yetenekler</a></li>
+          <li><a href="#experience">Deneyim</a></li>
+          <li><a href="#projects">Projeler</a></li>
+          <li><a href="#education">Eğitim</a></li>
+          <li><a href="#contact">İletişim</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <!-- HERO -->
+    <div class="hero">
+      <div class="card left">
+        <h1>Merhaba, ben Burak.</h1>
+        <p class="subtitle">
+
+          Android Uygulama Geliştiricisi
+          
+        </p>
+
+        <div class="chips" aria-label="Öne çıkanlar">
+          <span class="chip">Android (Kotlin)</span>
+          <span class="chip">Firebase</span>
+          <span class="chip">REST API</span>
+          <span class="chip">Git/GitHub</span>
+          <span class="chip">UI/UX</span>
+        </div>
+
+        <p class="muted">
+    
+            Android ekosisteminde Kotlin odaklı uygulamalar geliştiren, modern mimari prensiplerini (MVVM, katmanlı yapı) benimseyen bir geliştiriciyim. 
+            Performans, ölçeklenebilirlik ve sürdürülebilir kod kalitesini öncelik olarak görürüm. 
+            Firebase entegrasyonları, kullanıcı rol yönetimi ve gerçek zamanlı veri akışları konusunda deneyimliyim. 
+            Ürün odaklı düşünüp, kullanıcı deneyimini teknik doğrulukla birleştiririm.
+
+        </p>
+
+        <div class="cta">
+          <!-- Linkleri güncelle -->
+          <a class="btn primary" href="mailto:burakalmaz963@gmail.com?subject=CV%20İletişim&body=Merhaba%20Burak,">📩 İletişime geç</a>
+          <a class="btn" href="https://github.com/burakalmaz1" target="_blank" rel="noreferrer">🐙 GitHub</a>
+          <a class="btn" href="#" onclick="window.print(); return false;">🖨️ PDF/Print</a>
+        </div>
+      </div>
+
+      <aside class="card right" aria-label="Hızlı bilgiler">
+        <div class="mini">
+          <div class="label">Konum</div>
+          <div class="value">Ankara, Türkiye</div>
+        </div>
+        <div class="mini">
+          <div class="label">E-posta</div>
+          <div class="value">burak963@gmail.com</div>
+        </div>
+        <div class="mini">
+          <div class="label">İlgi Alanı</div>
+          <div class="value">Mobil Uygulama • Ürün • Performans</div>
+        </div>
+        <div class="mini">
+          <div class="label">Dil</div>
+          <div class="value">Türkçe • İngilizce</div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-title">
+        <h2>Hakkımda</h2>
+        <p>Ben kimim, nasıl çalışırım</p>
+      </div>
+
+      <div class="grid">
+        <div class="card box col-12">
+          <h3>Özet</h3>
+          <p class="muted">
+            <!-- BURAYI DÜZENLE -->
+            Android tarafında Kotlin ile uygulamalar geliştiriyorum. Firebase (Auth/Database/Storage) ile hızlı MVP çıkarma,
+            ekran akışlarını düzenleme, kullanıcı rol/izinleri ve temel analitik/izleme gibi konularda deneyimliyim.
+          </p>
+          <ul class="list">
+            <li>Güçlü yanlar: problem çözme, hızlı prototipleme, temiz kod.</li>
+            <li>Çalışma tarzı: küçük parçalara böl, ölç, iyileştir.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-title">
+        <h2>Yetenekler</h2>
+        <p>Teknik yığın ve araçlar</p>
+      </div>
+
+      <div class="grid">
+        <div class="card box col-6">
+          <h3>Teknolojiler</h3>
+          <ul class="list">
+            <li>Kotlin, Android SDK, Jetpack (Navigation, ViewBinding)</li>
+            <li>Firebase: Auth, Realtime DB / Firestore, Storage</li>
+            <li>Git & GitHub, temel CI/CD mantığı</li>
+          </ul>
+        </div>
+
+        <div class="card box col-6">
+          <h3>Pratik Yetkinlikler</h3>
+          <ul class="list">
+            <li>Uygulama mimarisi (katmanlı yapı, modüler düşünme)</li>
+            <li>UI/UX: tutarlı tasarım, responsive ekranlar</li>
+            <li>Hata ayıklama, loglama, performans takibi</li>
+            <li>MVP planlama ve iteratif geliştirme</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="section-title">
+        <h2>Deneyim</h2>
+        <p>İş / staj / freelance</p>
+      </div>
+
+      <div class="timeline">
+        <div class="item">
+          <div class="top">
+            <div class="role">Android Developer (Proje)</div>
+            <div class="meta">2025 — Devam</div>
+          </div>
+          <div class="meta">Kendi projelerim • Ankara</div>
+          <p class="muted">
+            CoffeeApp; kullanıcıların güvenli şekilde kayıt olup giriş yapabildiği, rol bazlı yetkilendirme ile
+            dinamik ekran yönlendirmesi sunan modern bir Android uygulamasıdır. 
+            Firebase Authentication ile kimlik doğrulama sürecini yönettim; 
+            Firebase Realtime Database/Firestore ile kullanıcı profili, bakiye ve uygulama verilerini 
+            gerçek zamanlı olarak senkronize ettim. 
+            Navigation yapısı ile ana sayfa, ürün listeleme, ürün detay, sipariş ve profil ekranlarını 
+            modüler ve ölçeklenebilir bir mimariyle kurguladım. 
+            Uygulama boyunca performans, temiz kod ve sürdürülebilir mimari prensiplerini öncelik olarak benimsedim.
+        </p>
+
+        <ul class="list">
+            <li><strong>Authentication:</strong> Kayıt/Giriş, oturum kontrolü, hata yönetimi</li>
+            <li><strong>Database:</strong> Kullanıcı verileri ve uygulama içi içerik yönetimi</li>
+            <li><strong>Rol Yönetimi:</strong> Yetkiye göre dinamik ekran yönlendirme</li>
+            <li><strong>Navigation:</strong> Düzenli ve ölçeklenebilir ekran akışı</li>
+            <li><strong>UI/UX:</strong> Modern tasarım, responsive yapı</li>
+        </ul>
+
+        <p class="muted">
+  🔗        <strong>GitHub – Showcase:</strong> 
+            <a href="https://github.com/burakalmaz1/CoffeeApp-Showcase" 
+                target="_blank" 
+                rel="noopener noreferrer">
+                github.com/burakalmaz1/CoffeeApp-Showcase
+            </a>
+        </p>
+
+        </div>
+
+        <div class="item">
+            <div class="top">
+            <div class="role">Kariyer Hedefi</div>
+            <div class="meta">Aktif Olarak Fırsat Arıyorum</div>
+        </div>
+            <div class="meta">Junior Android Developer</div>
+        <p class="muted">
+            Android ekosisteminde profesyonel deneyim kazanmak amacıyla 
+            staj veya junior pozisyonlara açığım. 
+             Kendi geliştirdiğim projelerle pratik deneyim kazanmış olup, 
+            üretim ortamında sorumluluk almaya hazırım.
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+  <div class="section-title">
+    <h2>Projeler</h2>
+    <p>Öne çıkan işler</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- CoffeeApp -->
+    <div class="card box col-6">
+      <h3>CoffeeApp</h3>
+      <p class="muted">
+        Kullanıcı kayıt/giriş, profil ve bakiye yönetimi içeren modern bir Android uygulamasıdır. 
+        Firebase Authentication ile güvenli oturum kontrolü; Firebase Realtime Database ile 
+        kullanıcı verilerinin gerçek zamanlı yönetimi sağlanmıştır. 
+        Navigation yapısı ile ürün listeleme, sipariş ve profil ekranları 
+        modüler ve ölçeklenebilir şekilde tasarlanmıştır.
+      </p>
+      <ul class="list">
+        <li><strong>Authentication:</strong> Kayıt, giriş, oturum yönetimi</li>
+        <li><strong>Database:</strong> Kullanıcı & uygulama verisi senkronizasyonu</li>
+        <li><strong>Mimari:</strong> Katmanlı yapı, temiz kod prensibi</li>
+        <li><strong>Teknolojiler:</strong> Kotlin, Firebase, Jetpack Navigation</li>
+        <li>
+          🔗 <a href="https://github.com/burakalmaz1/CoffeeApp-Showcase" 
+                target="_blank" 
+                rel="noopener noreferrer">
+              GitHub Showcase
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ApartmentManagement -->
+    <div class="card box col-6">
+      <h3>ApartmentManagement</h3>
+      <p class="muted">
+        Apartman yönetimi için geliştirilen rol tabanlı bir mobil uygulamadır. 
+        Kullanıcı (komşu) ve yönetici akışları ayrı şekilde tasarlanmış; 
+        Firebase Realtime Database ile duyuru, kullanıcı bilgileri ve 
+        temel veri yönetimi sağlanmıştır. 
+        Yetkiye göre dinamik ekran yönlendirme uygulanmıştır.
+      </p>
+      <ul class="list">
+        <li><strong>Rol Yönetimi:</strong> Komşu / Yönetici ekran ayrımı</li>
+        <li><strong>Authentication:</strong> Güvenli kullanıcı doğrulama</li>
+        <li><strong>Database:</strong> Gerçek zamanlı veri yönetimi</li>
+        <li><strong>Teknolojiler:</strong> Kotlin, Firebase Realtime DB</li>
+        <li>
+          🔗 <a href="https://github.com/burakalmaz1" 
+                target="_blank" 
+                rel="noopener noreferrer">
+              GitHub
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+    <!-- EDUCATION -->
+<section id="education">
+  <div class="section-title">
+    <h2>Eğitim</h2>
+    <p>Akademik geçmiş</p>
+  </div>
+
+  <div class="timeline">
+    <div class="item">
+      <div class="top">
+        <div class="role">Ankara Üniversitesi / Yazılım Mühendisliği</div>
+        <div class="meta">2022 – Devam</div>
+      </div>
+      <div class="meta">Ankara Üniversitesi • Ankara</div>
+      <p class="muted">
+        Algoritma Analizi, Veri Yapıları, Veritabanı Sistemleri, 
+        İşletim Sistemleri ve Yazılım Mimarisi üzerine eğitim alıyorum. 
+        Mobil uygulama geliştirme ve sistem tasarımı alanlarına özel ilgi duyuyorum.
+      </p>
+    </div>
+  </div>
+</section>
+
+    <!-- CONTACT -->
+<section id="contact">
+  <div class="section-title">
+    <h2>İletişim</h2>
+    <p>Benimle bağlantıya geç</p>
+  </div>
+
+  <div class="grid">
+    <div class="card box col-12">
+      <h3>İletişim Bilgileri</h3>
+      <p class="muted">
+        Projeler, iş fırsatları veya teknik iş birlikleri için benimle iletişime geçebilirsiniz.
+      </p>
+
+      <ul class="list">
+        <li>
+          📧 E-posta: 
+          <a href="mailto:burakalmaz963@gmail.com">
+            burakalmaz963@gmail.com
+          </a>
+        </li>
+
+        <li>
+          🐙 GitHub: 
+          <a href="https://github.com/burakalmaz1" 
+             target="_blank" 
+             rel="noopener noreferrer">
+            github.com/burakalmaz1
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+    <footer>
+      © <span id="year"></span> Burak • Tek sayfa CV sitesi
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
