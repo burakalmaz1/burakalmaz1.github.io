@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Burak | CV</title>
-  <meta name="description" content="Burak - CV / Portfolio" />
+  <meta name="description" content="Burak - Android Developer CV / Portfolio" />
   <style>
     :root{
       --bg: #0b0f19;
@@ -33,7 +33,6 @@
     a { color: inherit; text-decoration: none; }
     .container{ width:min(1100px, 92vw); margin-inline:auto; }
 
-    /* Header */
     header{
       position: sticky;
       top: 0;
@@ -71,7 +70,6 @@
     }
     nav a:hover{ color: var(--text); background: rgba(255,255,255,.06); }
 
-    /* Hero */
     .hero{
       padding: 56px 0 22px;
       display:grid;
@@ -87,12 +85,16 @@
     }
     .hero .left{ padding: 26px; }
     .hero h1{
-      margin:0 0 6px;
+      margin:0 0 10px;
       font-size: clamp(28px, 4vw, 42px);
       line-height:1.15;
       letter-spacing:-.6px;
     }
-    .subtitle{ color: var(--muted); margin: 0 0 18px; }
+    .subtitle{
+      color: var(--muted);
+      margin: 0 0 18px;
+      font-size: 15px;
+    }
     .chips{ display:flex; flex-wrap:wrap; gap:10px; margin: 14px 0 22px; }
     .chip{
       font-size: 13px;
@@ -119,6 +121,12 @@
       background: linear-gradient(135deg, var(--brand), var(--brand2));
       color: #031018;
     }
+    .btn svg{
+      width:18px;
+      height:18px;
+      display:block;
+      flex-shrink:0;
+    }
 
     .hero .right{ padding: 18px; display:grid; gap: 12px; }
     .mini{
@@ -130,7 +138,6 @@
     .mini .label{ color: var(--muted); font-size: 12px; margin-bottom: 4px; }
     .mini .value{ font-weight: 700; }
 
-    /* Sections */
     section{ padding: 20px 0; }
     .section-title{
       display:flex;
@@ -173,14 +180,12 @@
     .item .meta{ color: var(--muted); font-size: 13px; }
     .item p{ margin: 10px 0 0; color: var(--muted); }
 
-    /* Footer */
     footer{
       padding: 26px 0 40px;
       color: var(--muted);
       font-size: 13px;
     }
 
-    /* Responsive */
     @media (max-width: 860px){
       .hero{ grid-template-columns: 1fr; }
       .col-6{ grid-column: span 12; }
@@ -199,7 +204,6 @@
 
       <nav aria-label="Sayfa menüsü">
         <ul>
-          <li><a href="#about">Hakkımda</a></li>
           <li><a href="#skills">Yetenekler</a></li>
           <li><a href="#experience">Deneyim</a></li>
           <li><a href="#projects">Projeler</a></li>
@@ -211,14 +215,11 @@
   </header>
 
   <main id="top" class="container">
-    <!-- HERO -->
     <div class="hero">
       <div class="card left">
-        <h1>Merhaba, ben Burak.</h1>
+        <h1>Hakkımda</h1>
         <p class="subtitle">
-
-          Android Uygulama Geliştiricisi
-          
+          Kotlin, Firebase ve modern Android bileşenleri ile kullanıcı odaklı, ölçeklenebilir ve sürdürülebilir mobil uygulamalar geliştiriyorum.
         </p>
 
         <div class="chips" aria-label="Öne çıkanlar">
@@ -230,19 +231,23 @@
         </div>
 
         <p class="muted">
-    
-            Android ekosisteminde Kotlin odaklı uygulamalar geliştiren, modern mimari prensiplerini (MVVM, katmanlı yapı) benimseyen bir geliştiriciyim. 
-            Performans, ölçeklenebilirlik ve sürdürülebilir kod kalitesini öncelik olarak görürüm. 
-            Firebase entegrasyonları, kullanıcı rol yönetimi ve gerçek zamanlı veri akışları konusunda deneyimliyim. 
-            Ürün odaklı düşünüp, kullanıcı deneyimini teknik doğrulukla birleştiririm.
-
+          Android geliştirme alanında Kotlin odaklı çalışan, modern yazılım mimarisi prensiplerini benimseyen ve ürün odaklı düşünen bir geliştiriciyim. 
+          Uygulama geliştirme sürecinde performans, sürdürülebilir kod yapısı, ölçeklenebilir mimari ve kullanıcı deneyimini birlikte ele alıyorum. 
+          Firebase Authentication ve Realtime Database entegrasyonları, rol tabanlı kullanıcı akışları, gerçek zamanlı veri yönetimi ve modern arayüz tasarımı konularında proje deneyimine sahibim. 
+          Teknik doğruluk ile sade ve etkili kullanıcı deneyimini bir araya getiren mobil ürünler geliştirmeyi hedefliyorum.
         </p>
 
         <div class="cta">
-          <!-- Linkleri güncelle -->
-          <a class="btn primary" href="mailto:burakalmaz963@gmail.com?subject=CV%20İletişim&body=Merhaba%20Burak,">📩 İletişime geç</a>
-          <a class="btn" href="https://github.com/burakalmaz1" target="_blank" rel="noreferrer">🐙 GitHub</a>
-          <a class="btn" href="#" onclick="window.print(); return false;">🖨️ PDF/Print</a>
+          <a class="btn primary" href="mailto:burakalmaz963@gmail.com?subject=CV%20İletişim&body=Merhaba%20Burak,">📩 İletişime Geç</a>
+
+          <a class="btn" href="https://github.com/burakalmaz1" target="_blank" rel="noreferrer" aria-label="GitHub Profili">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.28-1.7-1.28-1.7-1.04-.71.08-.69.08-.69 1.15.08 1.75 1.17 1.75 1.17 1.02 1.76 2.68 1.25 3.33.96.1-.74.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.3 1.17-3.11-.12-.29-.5-1.46.11-3.04 0 0 .96-.31 3.14 1.19a10.8 10.8 0 0 1 5.72 0c2.18-1.5 3.13-1.19 3.13-1.19.62 1.58.24 2.75.12 3.04.73.81 1.17 1.85 1.17 3.11 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.08.78 2.18 0 1.58-.01 2.85-.01 3.24 0 .31.2.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
+            </svg>
+            GitHub
+          </a>
+
+          <a class="btn" href="#" onclick="window.print(); return false;">🖨️ PDF / Print</a>
         </div>
       </div>
 
@@ -253,11 +258,11 @@
         </div>
         <div class="mini">
           <div class="label">E-posta</div>
-          <div class="value">burak963@gmail.com</div>
+          <div class="value">burakalmaz963@gmail.com</div>
         </div>
         <div class="mini">
-          <div class="label">İlgi Alanı</div>
-          <div class="value">Mobil Uygulama • Ürün • Performans</div>
+          <div class="label">Odak Alanı</div>
+          <div class="value">Mobil Uygulama • Ürün Geliştirme • Performans</div>
         </div>
         <div class="mini">
           <div class="label">Dil</div>
@@ -266,237 +271,180 @@
       </aside>
     </div>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="section-title">
-        <h2>Hakkımda</h2>
-        <p>Ben kimim, nasıl çalışırım</p>
-      </div>
-
-      <div class="grid">
-        <div class="card box col-12">
-          <h3>Özet</h3>
-          <p class="muted">
-            <!-- BURAYI DÜZENLE -->
-            Android tarafında Kotlin ile uygulamalar geliştiriyorum. Firebase (Auth/Database/Storage) ile hızlı MVP çıkarma,
-            ekran akışlarını düzenleme, kullanıcı rol/izinleri ve temel analitik/izleme gibi konularda deneyimliyim.
-          </p>
-          <ul class="list">
-            <li>Güçlü yanlar: problem çözme, hızlı prototipleme, temiz kod.</li>
-            <li>Çalışma tarzı: küçük parçalara böl, ölç, iyileştir.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
     <section id="skills">
       <div class="section-title">
         <h2>Yetenekler</h2>
-        <p>Teknik yığın ve araçlar</p>
       </div>
 
       <div class="grid">
         <div class="card box col-6">
-          <h3>Teknolojiler</h3>
+          <h3>Teknik Yetenekler</h3>
           <ul class="list">
-            <li>Kotlin, Android SDK, Jetpack (Navigation, ViewBinding)</li>
-            <li>Firebase: Auth, Realtime DB / Firestore, Storage</li>
-            <li>Git & GitHub, temel CI/CD mantığı</li>
+            <li>Kotlin, Android SDK ve Jetpack bileşenleri</li>
+            <li>Navigation, ViewBinding, RecyclerView ve Material Design</li>
+            <li>Firebase Authentication, Realtime Database, Firestore ve Storage</li>
+            <li>REST API entegrasyonu ve temel istemci-sunucu akışları</li>
+            <li>Git, GitHub ve versiyon kontrol süreçleri</li>
           </ul>
         </div>
 
         <div class="card box col-6">
-          <h3>Pratik Yetkinlikler</h3>
+          <h3>Uygulama Geliştirme Yetkinlikleri</h3>
           <ul class="list">
-            <li>Uygulama mimarisi (katmanlı yapı, modüler düşünme)</li>
-            <li>UI/UX: tutarlı tasarım, responsive ekranlar</li>
-            <li>Hata ayıklama, loglama, performans takibi</li>
-            <li>MVP planlama ve iteratif geliştirme</li>
+            <li>Katmanlı yapı ve ölçeklenebilir uygulama mimarisi</li>
+            <li>Rol tabanlı kullanıcı akışları ve erişim yönetimi</li>
+            <li>Responsive ekran tasarımı ve tutarlı UI/UX yaklaşımı</li>
+            <li>Hata ayıklama, log analizi ve performans odaklı geliştirme</li>
+            <li>MVP planlama, ürün bakış açısı ve iteratif geliştirme</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
     <section id="experience">
       <div class="section-title">
         <h2>Deneyim</h2>
-        <p>İş / staj / freelance</p>
       </div>
 
       <div class="timeline">
         <div class="item">
           <div class="top">
-            <div class="role">Android Developer (Proje)</div>
-            <div class="meta">2025 — Devam</div>
+            <div class="role">Android Developer • Kişisel Projeler</div>
+            <div class="meta">2025 — Devam Ediyor</div>
           </div>
-          <div class="meta">Kendi projelerim • Ankara</div>
+          <div class="meta">Ankara, Türkiye</div>
+
           <p class="muted">
-            CoffeeApp; kullanıcıların güvenli şekilde kayıt olup giriş yapabildiği, rol bazlı yetkilendirme ile
-            dinamik ekran yönlendirmesi sunan modern bir Android uygulamasıdır. 
-            Firebase Authentication ile kimlik doğrulama sürecini yönettim; 
-            Firebase Realtime Database/Firestore ile kullanıcı profili, bakiye ve uygulama verilerini 
-            gerçek zamanlı olarak senkronize ettim. 
-            Navigation yapısı ile ana sayfa, ürün listeleme, ürün detay, sipariş ve profil ekranlarını 
-            modüler ve ölçeklenebilir bir mimariyle kurguladım. 
-            Uygulama boyunca performans, temiz kod ve sürdürülebilir mimari prensiplerini öncelik olarak benimsedim.
-        </p>
+            CoffeeApp, modern Android geliştirme prensipleriyle inşa edilmiş; kullanıcıların güvenli biçimde kayıt olup giriş yapabildiği, ürünleri inceleyebildiği, sipariş akışlarını yönetebildiği ve hesap işlemlerini takip edebildiği bir mobil uygulamadır. 
+            Projede Firebase Authentication ile kimlik doğrulama, Firebase Realtime Database ile kullanıcı ve uygulama verilerinin yönetimi, Jetpack Navigation ile modüler ekran akışları ve Material Design tabanlı bir arayüz yaklaşımı kullanılmıştır.
+          </p>
 
-        <ul class="list">
-            <li><strong>Authentication:</strong> Kayıt/Giriş, oturum kontrolü, hata yönetimi</li>
-            <li><strong>Database:</strong> Kullanıcı verileri ve uygulama içi içerik yönetimi</li>
-            <li><strong>Rol Yönetimi:</strong> Yetkiye göre dinamik ekran yönlendirme</li>
-            <li><strong>Navigation:</strong> Düzenli ve ölçeklenebilir ekran akışı</li>
-            <li><strong>UI/UX:</strong> Modern tasarım, responsive yapı</li>
-        </ul>
+          <ul class="list">
+            <li><strong>Authentication:</strong> Kayıt, giriş, oturum kontrolü ve hata yönetimi</li>
+            <li><strong>Database:</strong> Kullanıcı verileri, bakiye bilgileri ve uygulama içi içerik yönetimi</li>
+            <li><strong>Navigation:</strong> Düzenli, modüler ve ölçeklenebilir ekran akışları</li>
+            <li><strong>UI/UX:</strong> Akıcı etkileşimler, modern tasarım ve kullanıcı odaklı ekran yapısı</li>
+            <li><strong>Mimari Yaklaşım:</strong> Temiz kod ve sürdürülebilir proje organizasyonu</li>
+          </ul>
 
-        <p class="muted">
-  🔗        <strong>GitHub – Showcase:</strong> 
-            <a href="https://github.com/burakalmaz1/CoffeeApp-Showcase" 
-                target="_blank" 
-                rel="noopener noreferrer">
-                github.com/burakalmaz1/CoffeeApp-Showcase
+          <p class="muted">
+            <strong>GitHub Showcase:</strong>
+            <a href="https://github.com/burakalmaz1/CoffeeApp-Showcase" target="_blank" rel="noopener noreferrer">
+              github.com/burakalmaz1/CoffeeApp-Showcase
             </a>
-        </p>
-
+          </p>
         </div>
 
         <div class="item">
-            <div class="top">
+          <div class="top">
             <div class="role">Kariyer Hedefi</div>
-            <div class="meta">Aktif Olarak Fırsat Arıyorum</div>
-        </div>
-            <div class="meta">Junior Android Developer</div>
-        <p class="muted">
-            Android ekosisteminde profesyonel deneyim kazanmak amacıyla 
-            staj veya junior pozisyonlara açığım. 
-             Kendi geliştirdiğim projelerle pratik deneyim kazanmış olup, 
-            üretim ortamında sorumluluk almaya hazırım.
-            </p>
+            <div class="meta">Aktif Olarak Fırsatlara Açığım</div>
+          </div>
+          <div class="meta">Junior Android Developer / Stajyer</div>
+          <p class="muted">
+            Android ekosisteminde profesyonel deneyim kazanabileceğim staj ve junior seviyedeki fırsatlara açığım. 
+            Kendi geliştirdiğim projeler aracılığıyla teknik altyapımı güçlendirdim, gerçek kullanıcı senaryoları üzerinden düşünerek ürün geliştirme pratiği edindim. 
+            Takım içinde sorumluluk almaya, öğrenmeye ve üretim süreçlerine katkı sağlamaya hazırım.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
     <section id="projects">
-  <div class="section-title">
-    <h2>Projeler</h2>
-    <p>Öne çıkan işler</p>
-  </div>
-
-  <div class="grid">
-
-    <!-- CoffeeApp -->
-    <div class="card box col-6">
-      <h3>CoffeeApp</h3>
-      <p class="muted">
-        Kullanıcı kayıt/giriş, profil ve bakiye yönetimi içeren modern bir Android uygulamasıdır. 
-        Firebase Authentication ile güvenli oturum kontrolü; Firebase Realtime Database ile 
-        kullanıcı verilerinin gerçek zamanlı yönetimi sağlanmıştır. 
-        Navigation yapısı ile ürün listeleme, sipariş ve profil ekranları 
-        modüler ve ölçeklenebilir şekilde tasarlanmıştır.
-      </p>
-      <ul class="list">
-        <li><strong>Authentication:</strong> Kayıt, giriş, oturum yönetimi</li>
-        <li><strong>Database:</strong> Kullanıcı & uygulama verisi senkronizasyonu</li>
-        <li><strong>Mimari:</strong> Katmanlı yapı, temiz kod prensibi</li>
-        <li><strong>Teknolojiler:</strong> Kotlin, Firebase, Jetpack Navigation</li>
-        <li>
-          🔗 <a href="https://github.com/burakalmaz1/CoffeeApp-Showcase" 
-                target="_blank" 
-                rel="noopener noreferrer">
-              GitHub Showcase
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- ApartmentManagement -->
-    <div class="card box col-6">
-      <h3>ApartmentManagement (Geliştirme Aşamasında)</h3>
-      <p class="muted">
-        Apartman yönetimi için geliştirilen rol tabanlı bir mobil uygulamadır. 
-        Kullanıcı (komşu) ve yönetici akışları ayrı şekilde tasarlanmış; 
-        Firebase Realtime Database ile duyuru, kullanıcı bilgileri ve 
-        temel veri yönetimi sağlanmıştır. 
-        Yetkiye göre dinamik ekran yönlendirme uygulanmıştır.
-      </p>
-      <ul class="list">
-        <li><strong>Rol Yönetimi:</strong> Komşu / Yönetici ekran ayrımı</li>
-        <li><strong>Authentication:</strong> Güvenli kullanıcı doğrulama</li>
-        <li><strong>Database:</strong> Gerçek zamanlı veri yönetimi</li>
-        <li><strong>Teknolojiler:</strong> Kotlin, Firebase Realtime DB</li>
-        <li>
-          🔗 <a href="https://github.com/burakalmaz1" 
-                target="_blank" 
-                rel="noopener noreferrer">
-              GitHub
-          </a>
-        </li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-    <!-- EDUCATION -->
-<section id="education">
-  <div class="section-title">
-    <h2>Eğitim</h2>
-    <p>Akademik geçmiş</p>
-  </div>
-
-  <div class="timeline">
-    <div class="item">
-      <div class="top">
-        <div class="role">Ankara Üniversitesi / Yazılım Mühendisliği</div>
-        <div class="meta">2023 – Devam</div>
+      <div class="section-title">
+        <h2>Projeler</h2>
       </div>
-      <div class="meta">Ankara Üniversitesi • Ankara</div>
-      <p class="muted">
-        Algoritma Analizi, Veri Yapıları, Veritabanı Sistemleri, 
-        İşletim Sistemleri ve Yazılım Mimarisi üzerine eğitim alıyorum. 
-        Mobil uygulama geliştirme ve sistem tasarımı alanlarına özel ilgi duyuyorum.
-      </p>
-    </div>
-  </div>
-</section>
 
-    <!-- CONTACT -->
-<section id="contact">
-  <div class="section-title">
-    <h2>İletişim</h2>
-    <p>Benimle bağlantıya geç</p>
-  </div>
+      <div class="grid">
+        <div class="card box col-6">
+          <h3>CoffeeApp</h3>
+          <p class="muted">
+            CoffeeApp, kullanıcıların kayıt olabildiği, giriş yapabildiği, menüleri inceleyebildiği, ürünleri sepete ekleyebildiği ve bakiye yönetimi gerçekleştirebildiği modern bir Android uygulamasıdır. 
+            Projede Firebase Authentication ile güvenli kullanıcı doğrulama, Firebase Realtime Database ile gerçek zamanlı veri yönetimi ve Jetpack Navigation ile düzenli ekran akışları sağlanmıştır.
+          </p>
+          <ul class="list">
+            <li><strong>Kimlik Doğrulama:</strong> Kayıt, giriş ve oturum yönetimi</li>
+            <li><strong>Veri Yönetimi:</strong> Kullanıcı ve uygulama verilerinin senkronizasyonu</li>
+            <li><strong>Uygulama Yapısı:</strong> Modüler ve sürdürülebilir ekran organizasyonu</li>
+            <li><strong>Teknolojiler:</strong> Kotlin, Firebase, Jetpack Navigation, Material Components</li>
+            <li>
+              <strong>GitHub Showcase:</strong>
+              <a href="https://github.com/burakalmaz1/CoffeeApp-Showcase" target="_blank" rel="noopener noreferrer">
+                CoffeeApp-Showcase
+              </a>
+            </li>
+          </ul>
+        </div>
 
-  <div class="grid">
-    <div class="card box col-12">
-      <h3>İletişim Bilgileri</h3>
-      <p class="muted">
-        Projeler, iş fırsatları veya teknik iş birlikleri için benimle iletişime geçebilirsiniz.
-      </p>
+        <div class="card box col-6">
+          <h3>Apartment Management</h3>
+          <p class="muted">
+            Apartment Management, apartman ve site yönetim süreçlerini dijitalleştirmek amacıyla geliştirilen rol tabanlı bir mobil uygulamadır. 
+            Yönetici ve kullanıcı akışları ayrı şekilde tasarlanmış; kullanıcı bilgileri, apartman verileri ve temel yönetim süreçleri Firebase altyapısı ile organize edilmiştir.
+          </p>
+          <ul class="list">
+            <li><strong>Rol Tabanlı Yapı:</strong> Yönetici ve kullanıcı ekran ayrımı</li>
+            <li><strong>Authentication:</strong> Güvenli kullanıcı doğrulama ve oturum kontrolü</li>
+            <li><strong>Veri Yönetimi:</strong> Gerçek zamanlı verilerle apartman ve kullanıcı bilgi akışı</li>
+            <li><strong>Teknolojiler:</strong> Kotlin, Firebase Authentication, Firebase Realtime Database</li>
+            <li>
+              <strong>GitHub Showcase:</strong>
+              <a href="https://github.com/burakalmaz1/ApartmentManagement-Showcase" target="_blank" rel="noopener noreferrer">
+                ApartmentManagement-Showcase
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-      <ul class="list">
-        <li>
-          📧 E-posta: 
-          <a href="mailto:burakalmaz963@gmail.com">
-            burakalmaz963@gmail.com
-          </a>
-        </li>
+    <section id="education">
+      <div class="section-title">
+        <h2>Eğitim</h2>
+      </div>
 
-        <li>
-          🐙 GitHub: 
-          <a href="https://github.com/burakalmaz1" 
-             target="_blank" 
-             rel="noopener noreferrer">
-            github.com/burakalmaz1
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
+      <div class="timeline">
+        <div class="item">
+          <div class="top">
+            <div class="role">Ankara Üniversitesi • Yazılım Mühendisliği</div>
+            <div class="meta">2023 – Devam Ediyor</div>
+          </div>
+          <div class="meta">Ankara, Türkiye</div>
+          <p class="muted">
+            Lisans eğitimim kapsamında algoritma analizi, veri yapıları, veritabanı sistemleri, işletim sistemleri ve yazılım tasarımı gibi temel bilgisayar mühendisliği alanlarında eğitim alıyorum. 
+            Özellikle mobil uygulama geliştirme, yazılım mimarisi ve kullanıcı odaklı ürün tasarımı alanlarına yoğun ilgi duyuyorum.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-title">
+        <h2>İletişim</h2>
+      </div>
+
+      <div class="grid">
+        <div class="card box col-12">
+          <h3>İletişim Bilgileri</h3>
+          <p class="muted">
+            Projeler, iş fırsatları, staj olanakları veya teknik iş birlikleri için benimle iletişime geçebilirsiniz.
+          </p>
+
+          <ul class="list">
+            <li>
+              <strong>E-posta:</strong>
+              <a href="mailto:burakalmaz963@gmail.com">burakalmaz963@gmail.com</a>
+            </li>
+            <li>
+              <strong>GitHub:</strong>
+              <a href="https://github.com/burakalmaz1" target="_blank" rel="noopener noreferrer">
+                github.com/burakalmaz1
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
     <footer>
       © <span id="year"></span> Burak • Tek sayfa CV sitesi
